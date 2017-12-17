@@ -55,7 +55,7 @@ public class BaseRestOneTest extends BaseRestClientSetting {
         when().
                 get("/{userId}", userId).
         then().
-                statusCode(404);
+                statusCode(200);
     }
 
     @Test(dataProvider = "provideGetUserId")
@@ -69,7 +69,7 @@ public class BaseRestOneTest extends BaseRestClientSetting {
                 when().
                 get("/{userId}", userId).
                 then().
-                statusCode(404);
+                statusCode(200);
     }
 
     @Step("The step: {text}")
