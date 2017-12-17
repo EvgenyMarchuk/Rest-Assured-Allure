@@ -9,6 +9,7 @@ import java.util.Properties;
 
 public class BaseRestClientSetting {
 
+    //Test
     protected Properties environment;
 
     private final String baseUrl =  "http://127.0.0.1";
