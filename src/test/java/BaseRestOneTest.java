@@ -69,7 +69,7 @@ public class BaseRestOneTest extends BaseRestClientSetting {
                 when().
                 get("/{userId}", userId).
                 then().
-                statusCode(200);
+                statusCode(404);
     }
 
     @Step("The step: {text}")
