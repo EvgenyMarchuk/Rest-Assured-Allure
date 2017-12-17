@@ -79,6 +79,6 @@ public class BaseRestOneTest extends BaseRestClientSetting {
 
     @DataProvider(name = "provideGetUserId", parallel = true)
     public static Object[][] getUserId(){
-        return new Object[][]{{2}, {3}, {4}, {5}, {6}, {7}, {8}};
+        return new Object[][]{{2}, {3}, {4}, {5}, {6}, {7}, {8}, {9} , {10}, {11}, {12}, {13}, {14}};
     }
 }
