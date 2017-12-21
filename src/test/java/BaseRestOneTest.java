@@ -72,6 +72,20 @@ public class BaseRestOneTest extends BaseRestClientSetting {
                 statusCode(404);
     }
 
+    @Test(dataProvider = "provideGetUserId")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("New test example Three")
+    @Story("This is a data provider story")
+    public void BaseRestClientFourOneTest(int userId){
+        GetStep(String.format("Base Rest Client Three  One Test and userId: %d", userId));
+        given().
+                contentType(JSON).
+                when().
+                get("/{userId}", userId).
+                then().
+                statusCode(404);
+    }
+
     @Step("The step: {text}")
     private void GetStep(String text) {
         System.out.println(text);
