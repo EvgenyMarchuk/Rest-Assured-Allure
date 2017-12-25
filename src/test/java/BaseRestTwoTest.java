@@ -11,7 +11,6 @@ import static io.restassured.http.ContentType.JSON;
 @Feature("This is a Feature Two")
 public class BaseRestTwoTest extends BaseRestClientSetting {
 
-    //New commit to the release brunch
     @BeforeClass
     public void SetUpClass(){
         RestAssured.basePath = "/comments";
