@@ -1,11 +1,10 @@
-import Helpers.DataproviderClass;
+import Helpers.DataProviderClass;
 import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static Helpers.DataproviderClass.GetStep;
+import static Helpers.Steps.GetStep;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 
@@ -74,7 +73,7 @@ public class BaseRestOneTest extends BaseRestClientSetting {
                 statusCode(404);
     }
 
-    @Test(dataProvider = "provideGetUserId", dataProviderClass = DataproviderClass.class)
+    @Test(dataProvider = "provideGetUserId", dataProviderClass = DataProviderClass.class)
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
