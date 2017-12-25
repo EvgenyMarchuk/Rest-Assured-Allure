@@ -8,10 +8,9 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
 
-@Epic("This is Epic Two")
-@Feature("This is a Feature Two")
+@Epic("Post")
+@Feature("Create post and Read collection post")
 public class PostTest extends BaseRestClientSetting{
 
     @BeforeClass
