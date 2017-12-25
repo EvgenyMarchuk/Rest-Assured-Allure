@@ -1,9 +1,11 @@
+import Helpers.DataproviderClass;
 import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import static Helpers.DataproviderClass.GetStep;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 
@@ -58,7 +60,7 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
                 statusCode(404);
     }
 
-    @Test(dataProvider = "provideGetCommentsId")
+    @Test(dataProvider = "provideGetCommentsId", dataProviderClass = DataproviderClass.class)
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
@@ -72,13 +74,4 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
                 statusCode(404);
     }
 
-    @Step("The step: {text}")
-    private void GetStep(String text) {
-        System.out.println(text);
-    }
-
-    @DataProvider(name = "provideGetUserId", parallel = true)
-    public static Object[][] getUserId(){
-        return new Object[][]{{20}, {21}, {22}, {23}, {24}, {5}, {28}, {29} , {310}, {311}, {312}, {313}, {314}};
-    }
 }
