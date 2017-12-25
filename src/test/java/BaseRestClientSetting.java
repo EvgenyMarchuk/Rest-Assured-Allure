@@ -1,5 +1,6 @@
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
+import io.restassured.parsing.Parser;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -9,8 +10,7 @@ import java.util.Properties;
 
 public class BaseRestClientSetting {
 
-    //Test
-    protected Properties environment;
+    private Properties environment;
 
     private final String baseUrl =  "http://127.0.0.1";
 
@@ -18,7 +18,7 @@ public class BaseRestClientSetting {
     public void SetUpSuite(){
         RestAssured.baseURI = baseUrl;
         RestAssured.port = 3000;
-
+        RestAssured.defaultParser = Parser.JSON;
         RestAssured.filters(new AllureRestAssured());
     }
 
@@ -28,13 +28,12 @@ public class BaseRestClientSetting {
         environment = new Properties();
         environment.put("OS name", System.getProperty("os.name"));
         environment.put("OS version", System.getProperty("os.version"));
-        //environment.put("OS", System.getProperty("os"));
         environment.put("URL", baseUrl);
 
         saveEnvironment();
     }
 
-    protected void saveEnvironment() {
+    private void saveEnvironment() {
         File resultsFolder = new File("./target/allure-results");
         if (!resultsFolder.exists()) {
             resultsFolder.mkdirs();
