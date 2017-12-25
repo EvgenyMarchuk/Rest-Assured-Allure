@@ -77,8 +77,8 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
         System.out.println(text);
     }
 
-    @DataProvider(name = "provideGetCommentsId")
-    public static Object[][] getCommentsId(){
-        return new Object[][]{{2}, {3}, {4}, {5}, {6}, {7}, {8}, {9} , {10}, {11}, {12}, {13}, {14}};
+    @DataProvider(name = "provideGetUserId", parallel = true)
+    public static Object[][] getUserId(){
+        return new Object[][]{{20}, {21}, {22}, {23}, {24}, {5}, {28}, {29} , {310}, {311}, {312}, {313}, {314}};
     }
 }
