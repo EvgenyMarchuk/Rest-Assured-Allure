@@ -21,7 +21,7 @@ public class BaseRestOneTest extends BaseRestClientSetting {
     @Severity(SeverityLevel.MINOR)
     @Description("New test example One")
     @Story("This is a story")
-    public void BaseRestClientOneTest(){
+    public void BaseRestClientOneOneTest(){
         GetStep("Base Rest Client One Test");
         given().
                 contentType(JSON).
@@ -35,7 +35,7 @@ public class BaseRestOneTest extends BaseRestClientSetting {
     @Severity(SeverityLevel.BLOCKER)
     @Description("New test example Two")
     @Story("This is a story")
-    public void BaseRestClientTwoTest(){
+    public void BaseRestClientTwoOneTest(){
         GetStep("Base Rest Client Two Test");
         given().
                 contentType(JSON).
@@ -45,31 +45,17 @@ public class BaseRestOneTest extends BaseRestClientSetting {
                 statusCode(200);
     }
 
-    @Test(dataProvider = "provideGetUserId")
+    @Test(dataProvider = "provideGetUserId", dataProviderClass = DataProviderClass.class)
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientThreeTest(int userId){
+    public void BaseRestClientThreeOneTest(int userId){
         GetStep(String.format("Base Rest Client Three Test and userId: %d", userId));
         given().
                 contentType(JSON).
         when().
                 get("/{userId}", userId).
         then().
-                statusCode(404);
-    }
-
-    @Test(dataProvider = "provideGetUserId")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("New test example Three")
-    @Story("This is a data provider story")
-    public void BaseRestClientThreeOneTest(int userId){
-        GetStep(String.format("Base Rest Client Three  One Test and userId: %d", userId));
-        given().
-                contentType(JSON).
-                when().
-                get("/{userId}", userId).
-                then().
                 statusCode(404);
     }
 
@@ -81,9 +67,23 @@ public class BaseRestOneTest extends BaseRestClientSetting {
         GetStep(String.format("Base Rest Client Three  One Test and userId: %d", userId));
         given().
                 contentType(JSON).
-                when().
+        when().
                 get("/{userId}", userId).
-                then().
+        then().
+                statusCode(404);
+    }
+
+    @Test(dataProvider = "provideGetUserId", dataProviderClass = DataProviderClass.class)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("New test example Three")
+    @Story("This is a data provider story")
+    public void BaseRestClientFiveOneTest(int userId){
+        GetStep(String.format("Base Rest Client Three  One Test and userId: %d", userId));
+        given().
+                contentType(JSON).
+        when().
+                get("/{userId}", userId).
+        then().
                 statusCode(404);
     }
 

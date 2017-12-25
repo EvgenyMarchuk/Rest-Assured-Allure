@@ -21,7 +21,7 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
     @Severity(SeverityLevel.MINOR)
     @Description("New test example One")
     @Story("This is a story")
-    public void BaseRestClientOneTest(){
+    public void BaseRestClientOneTwoTest(){
         GetStep("Base Rest Client One Test");
         given().
                 contentType(JSON).
@@ -35,7 +35,7 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
     @Severity(SeverityLevel.BLOCKER)
     @Description("New test example Two")
     @Story("This is a story")
-    public void BaseRestClientTwoTest(){
+    public void BaseRestClientTwoTwoTest(){
         GetStep("Base Rest Client Two Test");
         given().
                 contentType(JSON).
@@ -45,11 +45,11 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
                 statusCode(200);
     }
 
-    @Test(dataProvider = "provideGetCommentsId")
+    @Test(dataProvider = "provideGetCommentsId", dataProviderClass = DataProviderClass.class)
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientThreeTest(int commentsId){
+    public void BaseRestClientThreeTwoTest(int commentsId){
         GetStep(String.format("Base Rest Client Three Test and commentsId: %d", commentsId));
         given().
                 contentType(JSON).
@@ -63,13 +63,27 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientThreeOneTest(int commentsId){
+    public void BaseRestClientFourTwoTest(int commentsId){
         GetStep(String.format("Base Rest Client Three  One Test and commentsId: %d", commentsId));
         given().
                 contentType(JSON).
                 when().
                 get("/{commentsId}", commentsId).
                 then().
+                statusCode(404);
+    }
+
+    @Test(dataProvider = "provideGetCommentsId", dataProviderClass = DataProviderClass.class)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("New test example Three")
+    @Story("This is a data provider story")
+    public void BaseRestClientFiveTwoTest(int commentsId){
+        GetStep(String.format("Base Rest Client Three  One Test and commentsId: %d", commentsId));
+        given().
+                contentType(JSON).
+        when().
+                get("/{commentsId}", commentsId).
+        then().
                 statusCode(404);
     }
 
