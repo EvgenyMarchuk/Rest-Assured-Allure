@@ -13,6 +13,7 @@ import static io.restassured.RestAssured.given;
 @Feature("Create post and Read collection post")
 public class PostTest extends BaseRestClientSetting{
 
+
     @BeforeClass
     public void SetUpClass(){
         RestAssured.basePath = "/posts";
