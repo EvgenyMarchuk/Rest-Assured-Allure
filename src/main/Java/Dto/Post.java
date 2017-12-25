@@ -17,15 +17,15 @@ public class Post {
     @Expose
     private String author;
 
-    private Integer getId() {
+    public Integer getId() {
         return id;
     }
 
-    private void setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    private String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -33,7 +33,7 @@ public class Post {
         this.title = title;
     }
 
-    private String getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
