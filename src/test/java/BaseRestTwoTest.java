@@ -41,7 +41,7 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
         when().
                 get().
         then().
-                statusCode(200);
+                statusCode(404);
     }
 
     @Test(dataProvider = "provideGetCommentsId")
