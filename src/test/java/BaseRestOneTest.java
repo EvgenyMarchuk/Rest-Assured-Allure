@@ -87,7 +87,4 @@ public class BaseRestOneTest extends BaseRestClientSetting {
                 statusCode(404);
     }
 
-
-
-
 }
