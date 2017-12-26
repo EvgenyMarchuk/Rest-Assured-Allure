@@ -20,7 +20,17 @@ public class PostTest extends BaseRestClientSetting{
     }
 
     @Test
-    public void ReadCollectionPostsTest(){
+    public void ReadCollectionOnePostsTest(){
+        Post[] posts= get().
+                as(Post[].class);
+        for (Post post : posts) {
+            System.out.println(post.toString());
+        }
+
+    }
+
+    @Test
+    public void ReadCollectionTwoPostsTest(){
         Post[] posts= get().
                 as(Post[].class);
         for (Post post : posts) {
