@@ -51,6 +51,8 @@ public class PostTest extends BaseRestClientSetting{
         when().
                 post().
         then().
+                log().
+                all().
                 statusCode(201);
     }
 }

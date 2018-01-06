@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class Comment {
 
     @SerializedName("id")
-    @Expose
+    @Expose(serialize = false)
     private Integer id;
 
     @SerializedName("body")
@@ -19,10 +19,6 @@ public class Comment {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getBody() {

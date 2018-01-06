@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class Post {
 
     @SerializedName("id")
-    @Expose
+    @Expose(serialize = false)
     private Integer id;
 
     @SerializedName("title")
@@ -19,10 +19,6 @@ public class Post {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getTitle() {
