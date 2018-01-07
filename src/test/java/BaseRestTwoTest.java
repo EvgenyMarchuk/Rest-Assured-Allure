@@ -67,9 +67,9 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
         GetStep(String.format("Base Rest Client Three  One Test and commentsId: %d", commentsId));
         given().
                 contentType(JSON).
-                when().
+        when().
                 get("/{commentsId}", commentsId).
-                then().
+        then().
                 statusCode(404);
     }
 
