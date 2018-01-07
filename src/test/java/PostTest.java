@@ -6,6 +6,9 @@ import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import static Helpers.Helper.getElementByPosition;
+import static Helpers.Helper.getFirst;
+import static Helpers.Helper.getLast;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 
@@ -36,6 +39,10 @@ public class PostTest extends BaseRestClientSetting{
         for (Post post : posts) {
             System.out.println(post.toString());
         }
+
+        System.out.println("The last element in collection is: " + getLast(posts).toString());
+        System.out.println("Get Element By position: " + getElementByPosition(posts,3).toString());
+        System.out.println("Get First Element: " + getFirst(posts).toString());
 
     }
 
