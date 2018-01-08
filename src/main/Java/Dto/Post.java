@@ -1,6 +1,7 @@
 package Dto;
 
 import com.google.gson.annotations.*;
+import io.restassured.mapper.ObjectMapper;
 
 public class Post {
 
@@ -16,8 +17,12 @@ public class Post {
     @Expose
     private String author;
 
-    private Integer getId() {
+    public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {

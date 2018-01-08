@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static Helpers.Helper.*;
+import static Helpers.Helper.GetRandomUUID;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
@@ -48,10 +49,9 @@ public class PostTest extends BaseRestClientSetting{
 
     @Test
     public void CreatePostsTest(){
-        String rndUUID = GetRandomUUID();
         Post post = new Post();
-        post.setTitle(rndUUID);
-        post.setAuthor(rndUUID);
+        post.setTitle(GetRandomUUID());
+        post.setAuthor(GetRandomUUID());
 
         given().
                 contentType(JSON).
