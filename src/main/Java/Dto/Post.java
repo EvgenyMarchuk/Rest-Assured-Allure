@@ -1,7 +1,6 @@
 package Dto;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.*;
 
 public class Post {
 
@@ -17,7 +16,7 @@ public class Post {
     @Expose
     private String author;
 
-    public Integer getId() {
+    private Integer getId() {
         return id;
     }
 

@@ -2,15 +2,15 @@ import Dto.Post;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static Helpers.Helper.getElementByPosition;
-import static Helpers.Helper.getFirst;
-import static Helpers.Helper.getLast;
+import static Helpers.Helper.*;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
+import static io.restassured.http.ContentType.JSON;
+import static org.hamcrest.core.IsEqual.equalTo;
+
 
 @Epic("Post")
 @Feature("Create post and Read collection post")
@@ -48,16 +48,30 @@ public class PostTest extends BaseRestClientSetting{
 
     @Test
     public void CreatePostsTest(){
+        String rndUUID = GetRandomUUID();
         Post post = new Post();
-        post.setTitle("Test Title");
-        post.setAuthor("Test Author");
+        post.setTitle(rndUUID);
+        post.setAuthor(rndUUID);
 
         given().
-                contentType(ContentType.JSON).
+                contentType(JSON).
                 body(post).
         when().
                 post().
         then().
                 statusCode(201);
+
+        int postSize =
+                get().as(Post[].class).length;
+
+        given().
+                contentType(JSON).
+        when().
+                get("/{postSize}", postSize).
+        then().
+                body("id", equalTo(postSize)).
+                body("title", equalTo(post.getTitle())).
+                body("author", equalTo(post.getAuthor()));
+
     }
 }
