@@ -59,7 +59,7 @@ public class PatchPostTest extends BaseRestClientSetting {
                 patch("/1").
         then().
                 statusCode(200).
-                body("author", equalTo(oldPost.getTitle())).
+                body("author", equalTo(oldPost.getAuthor())).
                 body("title", equalTo(map.get("title")));
     }
 }
