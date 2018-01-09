@@ -12,9 +12,9 @@ import java.util.Properties;
 
 public class BaseRest {
 
-    private Properties environment;
+    private static Properties environment;
 
-    private final String baseUrl =  "http://127.0.0.1";
+    private static final String baseUrl =  "http://127.0.0.1";
 
     @BeforeSuite
     public void SetUpSuite(){
