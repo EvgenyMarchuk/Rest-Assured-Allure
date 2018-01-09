@@ -1,12 +1,10 @@
+import Base.BasePost;
 import Dto.Post;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import io.restassured.RestAssured;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static Helpers.Helper.*;
-import static Helpers.Helper.GetRandomUUID;
 import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
@@ -15,13 +13,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 @Epic("Post")
 @Feature("Create post and Read collection post")
-public class PostTest extends BaseRestClientSetting{
-
-
-    @BeforeClass
-    public void SetUpClass(){
-        RestAssured.basePath = "/posts";
-    }
+public class PostTest extends BasePost {
 
     @Test
     public void ReadCollectionOnePostsTest(){
@@ -59,19 +51,8 @@ public class PostTest extends BaseRestClientSetting{
         when().
                 post().
         then().
-                statusCode(201);
-
-        int postSize =
-                get().as(Post[].class).length;
-
-        given().
-                contentType(JSON).
-        when().
-                get("/{postSize}", postSize).
-        then().
-                body("id", equalTo(postSize)).
+                statusCode(201).
                 body("title", equalTo(post.getTitle())).
                 body("author", equalTo(post.getAuthor()));
-
     }
 }

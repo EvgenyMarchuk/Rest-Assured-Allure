@@ -1,24 +1,18 @@
+import Base.BasePost;
 import Dto.Post;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import io.restassured.RestAssured;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static Helpers.Helper.GetRandomUUID;
+import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.equalTo;
 
 @Epic("Post")
 @Feature("Put post test")
-public class PutPostTest extends BaseRestClientSetting{
-
-    @BeforeClass
-    public void SetUpClass(){
-        RestAssured.basePath = "/posts";
-    }
+public class PutPostTest extends BasePost {
 
     @Test
     public void BasePutTest(){
@@ -30,16 +24,31 @@ public class PutPostTest extends BaseRestClientSetting{
                 contentType(JSON).
                 body(post).
         when().
-                put("/1").
-        then().
-                statusCode(200);
-
-        when().
-                get("/1").
+                put("/{id}", POST_ID).
         then().
                 statusCode(200).
                 body("title", equalTo(post.getTitle())).
                 body("author", equalTo(post.getAuthor()));
+    }
 
+    @Test
+    public void BasePutAllElementsTest(){
+        Post post = new Post();
+        int size = get().as(Post[].class).length;
+
+        for (int i = 1; i <= size; i++){
+            post.setAuthor(GetRandomUUID());
+            post.setTitle(GetRandomUUID());
+
+            given().
+                    contentType(JSON).
+                    body(post).
+            when().
+                    put("/{id}", i).
+            then().
+                    statusCode(200).
+                    body("title", equalTo(post.getTitle())).
+                    body("author", equalTo(post.getAuthor()));
+        }
     }
 }

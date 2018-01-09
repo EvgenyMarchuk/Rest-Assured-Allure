@@ -1,3 +1,4 @@
+import Base.BasePost;
 import Helpers.DataProviderClass;
 import io.qameta.allure.*;
 import io.restassured.RestAssured;
@@ -10,7 +11,7 @@ import static io.restassured.http.ContentType.JSON;
 
 @Epic("This is Epic Two")
 @Feature("This is a Feature Two")
-public class BaseRestTwoTest extends BaseRestClientSetting {
+public class BaseRestTwoTest extends BasePost {
 
     @BeforeClass
     public void SetUpClass(){
@@ -49,12 +50,12 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientThreeTwoTest(int commentsId){
-        GetStep(String.format("Base Rest Client Three Test and commentsId: %d", commentsId));
+    public void BaseRestClientThreeTwoTest(int id){
+        GetStep(String.format("Base Rest Client Three Test and commentsId: %d", id));
         given().
                 contentType(JSON).
         when().
-                get("/{commentsId}", commentsId).
+                get("/{id}", id).
         then().
                 statusCode(404);
     }
@@ -63,12 +64,12 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientFourTwoTest(int commentsId){
-        GetStep(String.format("Base Rest Client Three  One Test and commentsId: %d", commentsId));
+    public void BaseRestClientFourTwoTest(int id){
+        GetStep(String.format("Base Rest Client Three  One Test and commentsId: %d", id));
         given().
                 contentType(JSON).
         when().
-                get("/{commentsId}", commentsId).
+                get("/{id}", id).
         then().
                 statusCode(404);
     }
@@ -77,12 +78,12 @@ public class BaseRestTwoTest extends BaseRestClientSetting {
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientFiveTwoTest(int commentsId){
-        GetStep(String.format("Base Rest Client Three  One Test and commentsId: %d", commentsId));
+    public void BaseRestClientFiveTwoTest(int id){
+        GetStep(String.format("Base Rest Client Three  One Test and commentsId: %d", id));
         given().
                 contentType(JSON).
         when().
-                get("/{commentsId}", commentsId).
+                get("/{id}", id).
         then().
                 statusCode(404);
     }

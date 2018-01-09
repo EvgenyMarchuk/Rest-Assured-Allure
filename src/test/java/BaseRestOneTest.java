@@ -1,7 +1,6 @@
+import Base.BasePost;
 import Helpers.DataProviderClass;
 import io.qameta.allure.*;
-import io.restassured.RestAssured;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static Helpers.Steps.GetStep;
@@ -10,12 +9,7 @@ import static io.restassured.http.ContentType.JSON;
 
 @Epic("This is Epic One")
 @Feature("This is a Feature One")
-public class BaseRestOneTest extends BaseRestClientSetting {
-
-    @BeforeClass
-    public void SetUpClass(){
-        RestAssured.basePath = "/posts";
-    }
+public class BaseRestOneTest extends BasePost {
 
     @Test
     @Severity(SeverityLevel.MINOR)
@@ -45,44 +39,44 @@ public class BaseRestOneTest extends BaseRestClientSetting {
                 statusCode(200);
     }
 
-    @Test(dataProvider = "provideGetUserId", dataProviderClass = DataProviderClass.class)
+    @Test(dataProvider = "provideGetPostId", dataProviderClass = DataProviderClass.class)
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientThreeOneTest(int userId){
-        GetStep(String.format("Base Rest Client Three Test and userId: %d", userId));
+    public void BaseRestClientThreeOneTest(int id){
+        GetStep(String.format("Base Rest Client Three One Test and Id: %d", id));
         given().
                 contentType(JSON).
         when().
-                get("/{userId}", userId).
+                get("/{id}", id).
         then().
                 statusCode(404);
     }
 
-    @Test(dataProvider = "provideGetUserId", dataProviderClass = DataProviderClass.class)
+    @Test(dataProvider = "provideGetPostId", dataProviderClass = DataProviderClass.class)
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientFourOneTest(int userId){
-        GetStep(String.format("Base Rest Client Three  One Test and userId: %d", userId));
+    public void BaseRestClientFourOneTest(int id){
+        GetStep(String.format("Base Rest Client Three One Test and Id: %d", id));
         given().
                 contentType(JSON).
         when().
-                get("/{userId}", userId).
+                get("/{id}", id).
         then().
                 statusCode(404);
     }
 
-    @Test(dataProvider = "provideGetUserId", dataProviderClass = DataProviderClass.class)
+    @Test(dataProvider = "provideGetPostId", dataProviderClass = DataProviderClass.class)
     @Severity(SeverityLevel.CRITICAL)
     @Description("New test example Three")
     @Story("This is a data provider story")
-    public void BaseRestClientFiveOneTest(int userId){
-        GetStep(String.format("Base Rest Client Three  One Test and userId: %d", userId));
+    public void BaseRestClientFiveOneTest(int id){
+        GetStep(String.format("Base Rest Client Three One Test and Id: %d", id));
         given().
                 contentType(JSON).
         when().
-                get("/{userId}", userId).
+                get("/{id}", id).
         then().
                 statusCode(404);
     }

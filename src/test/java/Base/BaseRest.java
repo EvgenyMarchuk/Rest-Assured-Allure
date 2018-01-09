@@ -1,3 +1,5 @@
+package Base;
+
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
@@ -8,7 +10,7 @@ import java.io.*;
 import java.util.Properties;
 
 
-public class BaseRestClientSetting {
+public class BaseRest {
 
     private Properties environment;
 
