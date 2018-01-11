@@ -12,7 +12,7 @@ import static io.restassured.http.ContentType.JSON;
 public class DeletePostsTest extends BasePosts {
 
     @Test
-    public void BaseDeleteTest(){
+    public void DeleteTest(){
         int id = getLast(get().as(Post[].class)).getId();
 
         given().
