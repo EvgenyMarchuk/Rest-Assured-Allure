@@ -1,4 +1,6 @@
-import Base.BasePost;
+package PostsRest;
+
+import Base.BasePosts;
 import Dto.Post;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -13,7 +15,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 @Epic("Post")
 @Feature("Create post and Read collection post")
-public class PostTest extends BasePost {
+public class PostPostsTest extends BasePosts {
 
     @Test
     public void ReadCollectionOnePostsTest(){

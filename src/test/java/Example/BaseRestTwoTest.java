@@ -1,4 +1,6 @@
-import Base.BasePost;
+package Example;
+
+import Base.BasePosts;
 import Helpers.DataProviderClass;
 import io.qameta.allure.*;
 import io.restassured.RestAssured;
@@ -11,7 +13,7 @@ import static io.restassured.http.ContentType.JSON;
 
 @Epic("This is Epic Two")
 @Feature("This is a Feature Two")
-public class BaseRestTwoTest extends BasePost {
+public class BaseRestTwoTest extends BasePosts {
 
     @BeforeClass
     public void SetUpClass(){

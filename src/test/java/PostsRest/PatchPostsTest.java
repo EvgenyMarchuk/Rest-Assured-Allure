@@ -1,4 +1,6 @@
-import Base.BasePost;
+package PostsRest;
+
+import Base.BasePosts;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 
@@ -12,7 +14,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 @Epic("Post")
 @Feature("Patch post test")
-public class PatchPostTest extends BasePost {
+public class PatchPostsTest extends BasePosts {
 
     @Test
     @Severity(SeverityLevel.CRITICAL)

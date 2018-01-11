@@ -1,4 +1,6 @@
-import Base.BasePost;
+package PostsRest;
+
+import Base.BasePosts;
 import Dto.Post;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -12,7 +14,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 @Epic("Post")
 @Feature("Put post test")
-public class PutPostTest extends BasePost {
+public class PutPostsTest extends BasePosts {
 
     @Test
     public void BasePutTest(){

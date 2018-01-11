@@ -3,12 +3,14 @@ package Base;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
 
-public class BasePost extends BaseRest {
+import static Helpers.Common.BASE_POSTS_PATH;
+
+public class BasePosts extends BaseRest {
 
     protected static final int POST_ID = 1;
 
     @BeforeClass
     public void SetUpClass(){
-        RestAssured.basePath = "/posts";
+        RestAssured.basePath = BASE_POSTS_PATH;
     }
 }

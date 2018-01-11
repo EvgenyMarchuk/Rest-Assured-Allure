@@ -1,4 +1,6 @@
-import Base.BasePost;
+package Example;
+
+import Base.BasePosts;
 import Helpers.DataProviderClass;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
@@ -9,7 +11,7 @@ import static io.restassured.http.ContentType.JSON;
 
 @Epic("This is Epic One")
 @Feature("This is a Feature One")
-public class BaseRestOneTest extends BasePost {
+public class BaseRestOneTest extends BasePosts {
 
     @Test
     @Severity(SeverityLevel.MINOR)

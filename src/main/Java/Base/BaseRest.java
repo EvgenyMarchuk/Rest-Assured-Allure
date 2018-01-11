@@ -6,20 +6,24 @@ import io.restassured.parsing.Parser;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Properties;
 
+import static Helpers.Common.BASE_PORT;
+import static Helpers.Common.BASE_URI;
 
 public class BaseRest {
 
     private static Properties environment;
 
-    private static final String baseUrl =  "http://127.0.0.1";
 
     @BeforeSuite
     public void SetUpSuite(){
-        RestAssured.baseURI = baseUrl;
-        RestAssured.port = 3000;
+        RestAssured.baseURI = BASE_URI;
+        RestAssured.port = BASE_PORT;
         RestAssured.defaultParser = Parser.JSON;
         RestAssured.filters(new AllureRestAssured());
     }
@@ -30,7 +34,7 @@ public class BaseRest {
         environment = new Properties();
         environment.put("OS name", System.getProperty("os.name"));
         environment.put("OS version", System.getProperty("os.version"));
-        environment.put("URL", baseUrl);
+        environment.put("URL", BASE_URI);
 
         saveEnvironment();
     }
