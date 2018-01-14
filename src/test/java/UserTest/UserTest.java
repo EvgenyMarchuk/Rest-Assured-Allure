@@ -14,7 +14,7 @@ public class UserTest extends BaseUser {
 
     @Test
     public void CreateUserTest(){
-        User user = User.createNewUser();
+        User user = User.createUser();
 
         System.out.println(user.toString());
 

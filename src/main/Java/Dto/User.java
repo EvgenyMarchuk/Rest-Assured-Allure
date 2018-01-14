@@ -100,7 +100,7 @@ public class User {
         this.company = company;
     }
 
-    public static User createNewUser(){
+    public static User createUser(){
         User user = new User();
         user.setName("John Gabriel");
         user.setUsername("JG");
