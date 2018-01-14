@@ -2,7 +2,6 @@ package CommentRest;
 
 import Base.BaseComments;
 import Dto.Comment;
-import Dto.Post;
 import org.testng.annotations.Test;
 
 import static Helpers.Helper.GetRandomUUID;
