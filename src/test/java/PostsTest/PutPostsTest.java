@@ -20,7 +20,7 @@ public class PutPostsTest extends BasePosts {
     public void EditPostsUsingPutTest(){
         Post post = new Post();
         post.setTitle(GetRandomUUID());
-        post.setAuthor(GetRandomUUID());
+        post.setBody(GetRandomUUID());
 
         given().
                 contentType(JSON).
@@ -30,7 +30,7 @@ public class PutPostsTest extends BasePosts {
         then().
                 statusCode(200).
                 body("title", equalTo(post.getTitle())).
-                body("author", equalTo(post.getAuthor()));
+                body("author", equalTo(post.getBody()));
     }
 
     @Test
@@ -39,8 +39,8 @@ public class PutPostsTest extends BasePosts {
         int size = get().as(Post[].class).length;
 
         for (int i = 1; i <= size; i++){
-            post.setAuthor(GetRandomUUID());
             post.setTitle(GetRandomUUID());
+            post.setBody(GetRandomUUID());
 
             given().
                     contentType(JSON).
@@ -50,7 +50,7 @@ public class PutPostsTest extends BasePosts {
             then().
                     statusCode(200).
                     body("title", equalTo(post.getTitle())).
-                    body("author", equalTo(post.getAuthor()));
+                    body("author", equalTo(post.getBody()));
         }
     }
 }

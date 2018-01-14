@@ -1,9 +1,9 @@
 package Dto;
 
-import com.google.gson.annotations.*;
-import io.restassured.mapper.ObjectMapper;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-public class Post {
+public class Todo {
 
     @SerializedName("userId")
     @Expose
@@ -14,9 +14,9 @@ public class Post {
     @SerializedName("title")
     @Expose
     private String title;
-    @SerializedName("body")
+    @SerializedName("completed")
     @Expose
-    private String body;
+    private Boolean completed;
 
     public Integer getUserId() {
         return userId;
@@ -42,16 +42,11 @@ public class Post {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
+    public Boolean getCompleted() {
+        return completed;
     }
 
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Post: Id:%d, Title:%s, Body:%s, UserId:%d", getId(), getTitle(), getBody(), getUserId());
+    public void setCompleted(Boolean completed) {
+        this.completed = completed;
     }
 }
