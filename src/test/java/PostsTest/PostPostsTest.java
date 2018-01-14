@@ -1,4 +1,4 @@
-package PostsRest;
+package PostsTest;
 
 import Base.BasePosts;
 import Dto.Post;

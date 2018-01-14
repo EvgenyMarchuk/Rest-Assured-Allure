@@ -12,8 +12,6 @@ import static org.hamcrest.Matchers.is;
 
 public class PostCommentTest extends BaseComments{
 
-    private final static int COMMENT_POST_ID = 5;
-
     @Test
     public void CreateCommentTest(){
         Comment comment = new Comment();

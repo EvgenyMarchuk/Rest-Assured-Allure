@@ -7,8 +7,6 @@ import static Helpers.Common.BASE_POSTS_PATH;
 
 public class BasePosts extends BaseRest {
 
-    protected static final int POST_ID = 1;
-
     @BeforeClass
     public void SetUpClass(){
         RestAssured.basePath = BASE_POSTS_PATH;

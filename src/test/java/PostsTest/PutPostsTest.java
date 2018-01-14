@@ -1,4 +1,4 @@
-package PostsRest;
+package PostsTest;
 
 import Base.BasePosts;
 import Dto.Post;
@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class PutPostsTest extends BasePosts {
 
     @Test
-    public void BasePutTest(){
+    public void EditPostsUsingPutTest(){
         Post post = new Post();
         post.setTitle(GetRandomUUID());
         post.setAuthor(GetRandomUUID());
@@ -34,7 +34,7 @@ public class PutPostsTest extends BasePosts {
     }
 
     @Test
-    public void BasePutAllElementsTest(){
+    public void EditAllPostsUsingPutTest(){
         Post post = new Post();
         int size = get().as(Post[].class).length;
 

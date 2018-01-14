@@ -8,6 +8,7 @@ import static Helpers.Common.BASE_POSTS_PATH;
 
 public class BaseComments extends BaseRest {
 
+    protected final static int COMMENT_POST_ID = 5;
 
     @BeforeClass
     public void SetUpClass(){

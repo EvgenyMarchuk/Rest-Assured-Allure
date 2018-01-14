@@ -1,3 +1,5 @@
+package OptionsTest;
+
 import Base.BaseRest;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;

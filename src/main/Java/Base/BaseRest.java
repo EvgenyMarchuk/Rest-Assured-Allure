@@ -18,7 +18,7 @@ import static Helpers.Common.BASE_URI;
 public class BaseRest {
 
     private static Properties environment;
-
+    protected static final int POST_ID = 1;
 
     @BeforeSuite
     public void SetUpSuite(){
