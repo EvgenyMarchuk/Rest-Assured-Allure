@@ -1,4 +1,4 @@
-package CommentRest;
+package CommentTest;
 
 import Base.BaseComments;
 import Dto.Comment;
