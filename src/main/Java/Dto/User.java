@@ -99,4 +99,32 @@ public class User {
     public void setCompany(Company company) {
         this.company = company;
     }
+
+    public static User createNewUser(){
+        User user = new User();
+        user.setName("John Gabriel");
+        user.setUsername("JG");
+        user.setEmail("JohnGabriel@gmail.com");
+        user.setAddress(Address.createAddress());
+        user.setPhone("1-771-736-8031 x114477");
+        user.setWebsite("testEmail.com");
+        user.setCompany(Company.createCompany());
+
+        return user;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str =new StringBuilder();
+        str.append("User: \n");
+        str.append(String.format("Name: %s\n", getName()));
+        str.append(String.format("User name: %s\n", getUsername()));
+        str.append(String.format("Email: %s\n", getEmail()));
+        str.append(String.format("%s\n", getAddress().toString()));
+        str.append(String.format("Phone: %s\n", getPhone()));
+        str.append(String.format("Web site: %s\n", getWebsite()));
+        str.append(String.format("%s\n", getCompany().toString()));
+
+        return str.toString();
+    }
 }

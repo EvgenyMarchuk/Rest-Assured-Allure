@@ -26,4 +26,21 @@ public class Geo {
     public void setLng(String lng) {
         this.lng = lng;
     }
+
+    public static Geo createGeo(){
+        Geo geo = new Geo();
+        geo.setLat("-45.78");
+        geo.setLng("80.28");
+        return geo;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        str.append("Geo: ");
+        str.append(String.format("Lat: %s, ", getLat()));
+        str.append(String.format("Lng: %s", getLng()));
+
+        return str.toString();
+    }
 }

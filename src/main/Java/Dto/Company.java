@@ -38,4 +38,23 @@ public class Company {
     public void setBs(String bs) {
         this.bs = bs;
     }
+
+    public static Company createCompany(){
+        Company company = new Company();
+        company.setName("Test Ltd.");
+        company.setCatchPhrase("We're the fastest.");
+        company.setBs("real team");
+        return company;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        str.append("Company: ");
+        str.append(String.format("Company name: %s, ", getName()));
+        str.append(String.format("CatchPhrase: %s, ", getCatchPhrase()));
+        str.append(String.format("Bs: %s", getBs()));
+
+        return str.toString();
+    }
 }

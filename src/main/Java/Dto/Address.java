@@ -59,4 +59,27 @@ public class Address {
     public void setGeo(Geo geo) {
         this.geo = geo;
     }
+
+    public static Address createAddress(){
+        Address address = new Address();
+        address.setStreet("Kile kill");
+        address.setSuite("Apt. 200");
+        address.setCity("Minsk");
+        address.setZipcode("220015");
+        address.setGeo(Geo.createGeo());
+
+        return address;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        str.append("Address: ");
+        str.append(String.format("Street: %s, ", getStreet()));
+        str.append(String.format("Suite: %s, ", getSuite()));
+        str.append(String.format("City: %s, ", getCity()));
+        str.append(String.format("%s", getGeo().toString()));
+
+        return str.toString();
+    }
 }
