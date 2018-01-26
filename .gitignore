@@ -1,6 +1,8 @@
 #IDEA Files
-.idea
-.allure
-target
+/.idea
+/.allure
+/target
+/build
 *.iml
 *.ipr
+*.log
