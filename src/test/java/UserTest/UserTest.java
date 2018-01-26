@@ -1,7 +1,9 @@
 package UserTest;
 
 import Base.BaseUser;
-import Dto.*;
+import Dto.User;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 
 import static Helpers.Helper.getLast;
@@ -10,6 +12,8 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.equalTo;
 
+@Epic("Users")
+@Feature("User")
 public class UserTest extends BaseUser {
 
     @Test
