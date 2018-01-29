@@ -86,7 +86,6 @@
         </plugins>
     </build>
 
-<!-- mvn allure:serve and report don't work if this section uncomment
     <reporting>
     <excludeDefaults>true</excludeDefaults>
     <plugins>
@@ -96,5 +95,5 @@
         </plugin>
     </plugins>
 </reporting>
--->
+
 </project>
