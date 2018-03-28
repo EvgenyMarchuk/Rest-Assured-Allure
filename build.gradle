@@ -1,0 +1,52 @@
+apply plugin: 'java'
+
+group = 'RestAssured'
+version = 'RELEASE'
+
+description = """"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+defaultTasks 'clean', 'test'
+
+configurations {
+    agent
+}
+
+clean {
+    doLast {
+        println 'Executing the clean task'
+    }
+}
+
+test {
+    doLast {
+        println 'Executing the test task'
+    }
+}
+
+test{
+    useTestNG()
+}
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    agent "org.aspectj:aspectjweaver:1.8.13"
+
+    compile group: 'org.testng', name: 'testng', version:'6.13.1'
+
+    compile group: 'io.rest-assured', name: 'rest-assured', version:'3.0.6'
+
+    compile group: 'io.qameta.allure', name: 'allure-rest-assured', version:'2.6.0'
+    compile group: 'io.qameta.allure', name: 'allure-testng', version: '2.6.0'
+
+    compile group: 'com.google.code.gson', name: 'gson', version:'2.7'
+}

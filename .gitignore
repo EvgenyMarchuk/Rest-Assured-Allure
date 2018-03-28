@@ -1,8 +1,11 @@
 #IDEA Files
+/.gradle
 /.idea
-/.allure
-/target
 /build
+/gradle
+/out
+/target
 *.iml
 *.ipr
 *.log
+
