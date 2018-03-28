@@ -1,4 +1,4 @@
-package CommentTest;
+package com.CommentTest;
 
 import Base.BaseComments;
 

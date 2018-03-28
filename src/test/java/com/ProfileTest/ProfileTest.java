@@ -1,4 +1,4 @@
-package ProfileTest;
+package com.ProfileTest;
 
 import Base.BaseProfile;
 import Dto.Profile;

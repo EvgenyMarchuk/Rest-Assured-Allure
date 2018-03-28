@@ -1,4 +1,4 @@
-package Example;
+package com.Example;
 
 import Base.BasePosts;
 import Helpers.DataProviderClass;

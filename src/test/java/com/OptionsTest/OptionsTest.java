@@ -1,4 +1,4 @@
-package OptionsTest;
+package com.OptionsTest;
 
 import Base.BaseRest;
 import io.qameta.allure.*;

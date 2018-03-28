@@ -1,4 +1,4 @@
-package UserTest;
+package com.UserTest;
 
 import Base.BaseUser;
 import org.testng.annotations.Test;

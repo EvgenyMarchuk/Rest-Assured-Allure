@@ -1,4 +1,4 @@
-package PostsTest;
+package com.PostsTest;
 
 import Base.BasePosts;
 import org.testng.annotations.Test;
