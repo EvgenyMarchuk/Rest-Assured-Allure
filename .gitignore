@@ -1,6 +1,7 @@
 #IDEA Files
 /.gradle
 /.idea
+/allure-results
 /build
 /gradle
 /out

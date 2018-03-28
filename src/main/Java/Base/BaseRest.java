@@ -40,11 +40,11 @@ public class BaseRest {
     }
 
     private void saveEnvironment() {
-        File resultsFolder = new File("./target/allure-results");
+        File resultsFolder = new File("./build/allure-results");
         if (!resultsFolder.exists()) {
             resultsFolder.mkdirs();
         }
-        try (OutputStream out = new FileOutputStream("./target/allure-results/environment.properties")){
+        try (OutputStream out = new FileOutputStream("./build/allure-results/environment.properties")){
             environment.store(out, "Allure environment properties");
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
