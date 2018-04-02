@@ -3,14 +3,13 @@ apply plugin: 'java'
 group = 'RestAssured'
 version = 'RELEASE'
 
-description = """"""
+description = "Simple gradle example."
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
-}
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 defaultTasks 'clean', 'test'
 
@@ -19,25 +18,29 @@ configurations {
 }
 
 clean {
+    doFirst{
+        println 'Started the clean task'
+    }
     doLast {
         println 'Executing the clean task'
     }
 }
 
 test {
+    useTestNG()
+    doFirst{
+        println 'Started the test task'
+    }
     doLast {
         println 'Executing the test task'
     }
-}
-
-test{
-    useTestNG()
 }
 
 repositories {
         
      maven { url "http://repo.maven.apache.org/maven2" }
 }
+
 dependencies {
     agent "org.aspectj:aspectjweaver:1.8.13"
 
